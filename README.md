@@ -64,6 +64,7 @@ Configure and build the extension:
 ```console
 ./configure
 make
+make install
 ```
 
 Install the compiled extension (may require administrator privileges):
