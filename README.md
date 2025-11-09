@@ -1,4 +1,5 @@
-Crypter.c - A Standalone PHP Source Code Encryption Tool
+# Crypter.c - A Standalone PHP Source Code Encryption Tool
+
 crypter.c is a self-contained C implementation of the phpcrypter tool. It was created to eliminate the dependency on PHP and Composer, providing a single binary file that can be easily used in any environment, especially within CI/CD pipelines.
 
 The program allows you to generate a skeleton for a PHP extension that decrypts encrypted files on the fly, and to encrypt and decrypt PHP files using the generated key.
@@ -22,18 +23,21 @@ decrypt: Decrypts a file that was previously encrypted. This is a helper functio
 Compiling crypter.c
 To compile the program, you need a gcc compiler and the OpenSSL development libraries.
 
+```console
 gcc crypter.c -o crypter -lssl -lcrypto
+```
 After executing this command, an executable file named crypter will be created in the current directory.
 
 How to Use
 Below is a typical workflow for using the tool.
 
 
-Step 1:
+# Step 1:
 Generate the Extension Source Code
 First, generate the extension skeleton. Let's name it myapp.
-
+```console
 ./crypter generate myapp
+```
 
 Result:
 A complete source code for the extension will be created in the .crypter/myapp/ directory.
@@ -41,20 +45,26 @@ Inside this directory, a file named myapp.key will be created, containing the un
 The payload will also be displayed on the screen.
 
 
-Step 2:
+# Step 2:
 Compile the PHP Extension
 Now you need to compile the generated source code.
 
 Change to the extension's source code directory:
-
+```console
 cd .crypter/myapp
+```
 Use phpize to prepare the environment for building the extension:
 
+```console
 phpize
+```
 Configure and build the extension:
 
+```console
 ./configure
 make
+```
+
 Install the compiled extension (may require administrator privileges):
 
 sudo make install
@@ -67,17 +77,19 @@ The path to php.ini and the file name (.so on Linux/macOS, .dll on Windows) may 
 Restart your web server or PHP-FPM to load the extension.
 
 
-Step 3:
+# Step 3:
 Encrypt PHP Files
 Once the extension is loaded, you can start encrypting your files. Return to your main project directory.
 
 Use the encrypt command, providing the application name (the same one from Step 1) and the path to the file you want to encrypt.
-
+```console
 ./crypter encrypt myapp /var/www/html/index.php
+```
 The program will automatically find the key in the .crypter/myapp/myapp.key file and use it for encryption.
 
 Step 4: Decrypt Files (Optional)
 If you want to restore a file to its original state, use the decrypt command:
-
+```console
 ./crypter decrypt myapp /var/www/html/index.php
+```
 That's it! Your files are now encrypted and will be automatically decrypted on the fly by your custom PHP extension.
