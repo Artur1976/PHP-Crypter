@@ -72,9 +72,10 @@ Install the compiled extension (may require administrator privileges):
 sudo make install
 Add the extension to your PHP configuration. Open your php.ini file and add the following line at the end:
 
-ini
-extension=myapp.so
-The path to php.ini and the file name (.so on Linux/macOS, .dll on Windows) may vary depending on your system.
+
+***extension=myapp.so***
+
+The path to **php.ini** and the file name (.so on Linux/macOS, .dll on Windows) may vary depending on your system.
 
 Restart your web server or PHP-FPM to load the extension.
 
