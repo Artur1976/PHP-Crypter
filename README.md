@@ -20,7 +20,8 @@ Can be invoked by providing the application name (e.g., myapp) or the full paylo
 Adds a special header to the PHP file that is recognized by the extension.
 decrypt: Decrypts a file that was previously encrypted. This is a helper function, mainly useful during development.
 
-Compiling crypter.c
+# Compiling crypter.c
+
 To compile the program, you need a gcc compiler and the OpenSSL development libraries.
 
 ```console
