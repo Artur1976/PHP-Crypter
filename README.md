@@ -44,20 +44,16 @@ Now you need to compile the generated source code.
 
 Change to the extension's source code directory:
 
-bash
 cd .crypter/myapp
 Use phpize to prepare the environment for building the extension:
 
-bash
 phpize
 Configure and build the extension:
 
-bash
 ./configure
 make
 Install the compiled extension (may require administrator privileges):
 
-bash
 sudo make install
 Add the extension to your PHP configuration. Open your php.ini file and add the following line at the end:
 
@@ -72,13 +68,11 @@ Once the extension is loaded, you can start encrypting your files. Return to you
 
 Use the encrypt command, providing the application name (the same one from Step 1) and the path to the file you want to encrypt.
 
-bash
 ./crypter encrypt myapp /var/www/html/index.php
 The program will automatically find the key in the .crypter/myapp/myapp.key file and use it for encryption.
 
 Step 4: Decrypt Files (Optional)
 If you want to restore a file to its original state, use the decrypt command:
 
-bash
 ./crypter decrypt myapp /var/www/html/index.php
 That's it! Your files are now encrypted and will be automatically decrypted on the fly by your custom PHP extension.
