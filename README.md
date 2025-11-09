@@ -87,7 +87,8 @@ Use the encrypt command, providing the application name (the same one from Step 
 ```
 The program will automatically find the key in the .crypter/myapp/myapp.key file and use it for encryption.
 
-Step 4: Decrypt Files (Optional)
+# Step 4:
+Decrypt Files (Optional)
 If you want to restore a file to its original state, use the decrypt command:
 ```console
 ./crypter decrypt myapp /var/www/html/index.php
