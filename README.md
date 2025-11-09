@@ -22,20 +22,20 @@ decrypt: Decrypts a file that was previously encrypted. This is a helper functio
 Compiling crypter.c
 To compile the program, you need a gcc compiler and the OpenSSL development libraries.
 
-bash
 gcc crypter.c -o crypter -lssl -lcrypto
 After executing this command, an executable file named crypter will be created in the current directory.
 
 How to Use
 Below is a typical workflow for using the tool.
 
-Step 1: Generate the Extension Source Code
+
+Step 1:
+Generate the Extension Source Code
 First, generate the extension skeleton. Let's name it myapp.
 
-bash
 ./crypter generate myapp
-Result:
 
+Result:
 A complete source code for the extension will be created in the .crypter/myapp/ directory.
 Inside this directory, a file named myapp.key will be created, containing the unique payload for your extension.
 The payload will also be displayed on the screen.
