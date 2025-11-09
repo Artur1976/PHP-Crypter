@@ -39,7 +39,10 @@ Result:
 A complete source code for the extension will be created in the .crypter/myapp/ directory.
 Inside this directory, a file named myapp.key will be created, containing the unique payload for your extension.
 The payload will also be displayed on the screen.
-Step 2: Compile the PHP Extension
+
+
+Step 2:
+Compile the PHP Extension
 Now you need to compile the generated source code.
 
 Change to the extension's source code directory:
@@ -63,7 +66,9 @@ The path to php.ini and the file name (.so on Linux/macOS, .dll on Windows) may 
 
 Restart your web server or PHP-FPM to load the extension.
 
-Step 3: Encrypt PHP Files
+
+Step 3:
+Encrypt PHP Files
 Once the extension is loaded, you can start encrypting your files. Return to your main project directory.
 
 Use the encrypt command, providing the application name (the same one from Step 1) and the path to the file you want to encrypt.
